@@ -1,0 +1,24 @@
+<section class="collections__section">
+  <div class="page__sizeContainer page__generalPadding">
+    <div class="collections__container">
+      <img src="/assets/circle-bg.svg" alt="background-element" class="collections__container__backgroundElement">
+      <div class="collections__heading">
+        <img src="/assets/starIcon-alt.svg" alt="Star Icon">
+        <h2>LATEST COLLECTION</h2>
+        <img src="/assets/starIcon-alt.svg" alt="Star Icon">
+      </div>
+
+      <div class="collections__list">
+        {% for collection in collections %}
+          {% assign collection_date = collection.created_at | date: "%s" %}
+          {% assign cutoff_date = "2025-01-01" | date: "%s" %}
+          {% if collection_date > cutoff_date %}
+            <div class="collection-card-element">
+              {% render 'collections-card', collections: collection %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
