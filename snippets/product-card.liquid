@@ -1,11 +1,28 @@
 <div class="product-card">
-  <h3>{{ product.title }}</h3>
-  <p>Price: ${{ product.price }}</p>
-  {% if product.tags %}
-    <ul>
-      {% for tag in product.tags %}
-        <li>{{ tag }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+  <div class="product-card-image-container">
+    <div class="product-card_image_border"></div>
+    <div class="product-card_image">
+      <img src={{ product.image }} alt={{ product.title }}>
+    </div>
+  </div>
+
+
+  <div class="product-card_info">
+    <div class="product-card_infoText">
+      <h3>{{ product.title }}</h3>
+      <p>${{ product.price }} USD</p>
+      {% if product.tags %}
+        <ul>
+          {% for tag in product.tags %}
+            <li>{{ tag }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    <button>
+      <img src="/assets/shoppingCart-icon.svg" alt="Shopping Cart Icon">
+    </button>
+
+  </div>
+
 </div>

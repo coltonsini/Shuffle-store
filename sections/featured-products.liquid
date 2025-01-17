@@ -1,8 +1,21 @@
 <section class="featured-products">
-  <h2>{{ settings['featured-products'].settings.heading }}</h2>
-  <div class="product-list">
-    {% for product in products %}
-      {% render 'product-card', product: product %}
-    {% endfor %}
+  <div class="page__sizeContainer page__generalPadding">
+    <div class="featured_products__container">
+      <div class="featured_products__heading">
+        <img src="/assets/starIcon-alt.svg" alt="Star Icon">
+        <h2>{{ settings['featured-products'].settings.heading }}</h2>
+        <img src="/assets/starIcon-alt.svg" alt="Star Icon">
+      </div>
+
+      <div class="product-list">
+        {% for product in products %}
+          <div class="product-card {% if forloop.index > 4 %}hidden{% endif %}">
+            {% render 'product-card', product: product %}
+          </div>
+        {% endfor %}
+      </div>
+      <button class="show-more-btn">Show More</button>
+    </div>
   </div>
+
 </section>
