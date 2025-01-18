@@ -1,0 +1,83 @@
+<footer class="page__footer">
+    <div class="page__sizeContainer page__generalPadding">
+        <div class="page__footer__controller">
+            <!-- Middle Content Controller -->
+            <div class="page__footer__middleContent__controller">
+                <ul class="page__footer__middleContent__controller__navigationLinks">
+                    {% for link in settings['footer'].settings.navigation_links %}
+                        <li class="{% if link.label == 'Home' %}active{% endif %}">
+                            <a href="{{ link.url }}" target="_self">
+                                {{ link.label }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <ul class="page__footer__middleContent__controller__legalLinks">
+                    {% for link in settings['footer'].settings.legal_links %}
+                        <li>
+                            <a href="{{ link.url }}" target="_self">
+                                {{ link.label }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="page__footer__middleContent__controller__paymentOptions">
+                    <span>We accept all major cards, PayPal & crypto</span>
+                    <div>
+                        {% for icon in settings['header'].settings.payment_icons %}
+                            <img src="{{ icon.url }}" alt="{{ icon.alt }}">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- Email Form -->
+            <div class="page__footer__emailForm">
+                <div class="page__footer_emailForm_content">
+                    <div class="page__footer__emailForm__controller">
+                        <span>Subscribe and receive drop notifications</span>
+                        <label for="">
+                            <input type="text" placeholder="Enter Email">
+                            <button>
+                                <img src="/assets/arrowInput.svg" alt="arrow-icon">
+                            </button>
+                        </label>
+                    </div>
+                    <ul class="page__footer__emailForm__socialLinks">
+                        {% for link in settings['footer'].settings.social_links %}
+                            <li>
+                                <a href="{{ link.url }}" target="_self">
+                                    {{ link.icon }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!-- Logo Container -->
+            <div class="page__footer__logoContainer">
+                <div class="page__footer__logoContainer__mainContent">
+                    <div class="page__footer_logoContainer__logoContainer">
+                        <div class="page__footer__logoContainer__logo">
+                            <img src="/assets/mobile-icon.svg" alt="Logo">
+                            <hr>
+                            <span>store</span>
+                        </div>
+                        <ul class="page__footer__emailForm__socialLinks">
+                            {% for link in settings['footer'].settings.social_links %}
+                                <li>
+                                    <a href="{{ link.url }}" target="_self">
+                                        {{ link.icon }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <p>
+                        © 2024, Shuffle.store Operated by Studio Plaid. Need help?<br>
+                        <a href="#" target="_self">Email support@shuffle.store</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
