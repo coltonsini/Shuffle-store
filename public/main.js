@@ -62,4 +62,16 @@ document.addEventListener('DOMContentLoaded', function() {
       showMoreBtn.textContent = 'Show More';
     }
   });
+
+  const header = document.querySelector('.page__header');
+  const topbar = document.querySelector('.slider');
+  const combinedHeight = header.offsetHeight + topbar.offsetHeight;
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > combinedHeight) {
+      header.classList.add('backdrop-blur-lg');
+    } else {
+      header.classList.remove('backdrop-blur-lg');
+    }
+  });
 });
