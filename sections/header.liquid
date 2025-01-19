@@ -1,0 +1,49 @@
+<header class="page__header">
+    {% include 'topBar.liquid' %}
+    <div class="page__sizeContainer page__generalPadding">
+        <nav class="page__header__nav">
+            <div class="page__header__nav__leftContent">
+                <button class="burgerMenu">
+                    <img src="/assets/burgerIcon.svg" alt="Responsive Icon" >
+                </button>
+
+                <div class="page__header__nav__logoContainer">
+                    <a href="#" target="_self">
+                        <picture>
+                            <source srcset="/assets/desktop-icon.svg" media="(min-width: 961px)">
+                            <source srcset="/assets/mobile-icon.svg" media="(max-width: 960px)">
+                            <img src="/assets/desktop-icon.svg" alt="Logo">
+                        </picture>
+                    </a>
+
+                    <hr>
+                    <span>store</span>
+                </div>
+            </div>
+
+            <a href="#" class="page__header__logoMiddle">
+                <img src="/assets/desktop-icon.svg" alt="Logo">
+            </a>
+
+            <article class="page__header__paymentContent">
+                <span>
+                    We Accept
+                </span>
+                <div class="page__header__paymentContent__icons">
+                    {% for icon in settings['header'].settings.payment_icons %}
+                        <img src="{{ icon.url }}" alt="{{ icon.alt }}">
+                    {% endfor %}
+                </div>
+            </article>
+            <ul class="page__header__links">
+                {% for link in settings['header'].settings.links %}
+                    <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+                {% endfor %}
+                <a href="#" target="_self">
+                    <img src="/assets/shoppingCart-icon.svg" alt="">
+                </a>
+            </ul>
+        </nav>
+    </div>
+    {% include 'header.popup.liquid' %}
+</header>

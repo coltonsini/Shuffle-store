@@ -30,3 +30,66 @@ eval("console.log('Gradiweb is online!!!');\n\n\n//# sourceURL=webpack://shopify
 /******/ 	
 /******/ })()
 ;
+
+/*
+ * Function where we manage the visibility of product cards
+ * In this case we only apply the hidden class to hide the products, and the animate class to animate the image entry
+ * Since we don't have so many products we can handle it this way but pagination would be ideal.
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+  const showMoreBtn = document.querySelector('.show-more-btn');
+  const hiddenProducts = document.querySelectorAll('.product-card.hidden');
+
+  showMoreBtn.addEventListener('click', function() {
+    if (showMoreBtn.textContent === 'Show More') {
+      hiddenProducts.forEach(product => {
+        product.classList.remove('hidden');
+        const imageContainer = product.querySelector('.product-card-image-container');
+        if (imageContainer) {
+          imageContainer.classList.add('animate');
+        }
+      });
+      showMoreBtn.textContent = 'Show Less';
+    } else {
+      hiddenProducts.forEach(product => {
+        product.classList.add('hidden');
+        const imageContainer = product.querySelector('.product-card-image-container');
+        if (imageContainer) {
+          imageContainer.classList.remove('animate');
+        }
+      });
+      showMoreBtn.textContent = 'Show More';
+    }
+  });
+
+  // Header and topbar blur effect
+
+  const header = document.querySelector('.page__header');
+  const topbar = document.querySelector('.slider');
+  const combinedHeight = header.offsetHeight + topbar.offsetHeight;
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > combinedHeight) {
+      header.classList.add('backdrop-blur-lg');
+    } else {
+      header.classList.remove('backdrop-blur-lg');
+    }
+  });
+
+  // Burger menu functionality
+
+  const burgerMenu = document.querySelector('.burgerMenu');
+    const popupOverlay = document.getElementById('popupOverlay');
+    const closePopup = document.getElementById('closePopup');
+
+    burgerMenu.addEventListener('click', function() {
+        popupOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+
+    closePopup.addEventListener('click', function() {
+        popupOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+});
