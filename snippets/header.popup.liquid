@@ -1,0 +1,24 @@
+<div class="popup-overlay page__generalPadding" id="popupOverlay">
+    <button class="close-popup" id="closePopup">
+        <img src="/assets/closeIcon.svg" alt="Close Icon">
+    </button>
+    <div class="popup-content">
+        <div class="popup-links">
+            <ul>
+                {% for link in settings['header'].settings.links %}
+                    <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <article class="popup-content__paymentContent">
+            <span>
+                We Accept
+            </span>
+            <div class="popup-content__Content__icons">
+                {% for icon in settings['header'].settings.payment_icons %}
+                    <img src="{{ icon.url }}" alt="{{ icon.alt }}">
+                {% endfor %}
+            </div>
+        </article>
+    </div>
+</div>

@@ -8,11 +8,14 @@
                 </button>
 
                 <div class="page__header__nav__logoContainer">
-                    <picture>
-                        <source srcset="/assets/desktop-icon.svg" media="(min-width: 961px)">
-                        <source srcset="/assets/mobile-icon.svg" media="(max-width: 960px)">
-                        <img src="/assets/desktop-icon.svg" alt="Logo">
-                    </picture>
+                    <a href="#" target="_self">
+                        <picture>
+                            <source srcset="/assets/desktop-icon.svg" media="(min-width: 961px)">
+                            <source srcset="/assets/mobile-icon.svg" media="(max-width: 960px)">
+                            <img src="/assets/desktop-icon.svg" alt="Logo">
+                        </picture>
+                    </a>
+
                     <hr>
                     <span>store</span>
                 </div>
@@ -42,4 +45,5 @@
             </ul>
         </nav>
     </div>
+    {% include 'header.popup.liquid' %}
 </header>

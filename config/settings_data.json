@@ -11,8 +11,8 @@
       "settings": {
         "logo_text": "MyShopify",
         "links": [
-          { "label": "All Products", "url": "/collections/all" },
-          { "label": "Collections", "url": "/collections" }
+          { "label": "All Products", "url": "#allProducts" },
+          { "label": "Collections", "url": "#collections" }
         ],
         "payment_icons": [
           { "url": "/assets/bitcoin.svg", "alt": "BitCoin" },

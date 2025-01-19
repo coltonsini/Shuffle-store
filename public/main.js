@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // Header and topbar blur effect
+
   const header = document.querySelector('.page__header');
   const topbar = document.querySelector('.slider');
   const combinedHeight = header.offsetHeight + topbar.offsetHeight;
@@ -74,4 +76,20 @@ document.addEventListener('DOMContentLoaded', function() {
       header.classList.remove('backdrop-blur-lg');
     }
   });
+
+  // Burger menu functionality
+
+  const burgerMenu = document.querySelector('.burgerMenu');
+    const popupOverlay = document.getElementById('popupOverlay');
+    const closePopup = document.getElementById('closePopup');
+
+    burgerMenu.addEventListener('click', function() {
+        popupOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+
+    closePopup.addEventListener('click', function() {
+        popupOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
 });
