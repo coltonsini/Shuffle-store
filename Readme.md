@@ -1,6 +1,6 @@
-# Shopify Simulator Documentation
+# Shuffle Store Documentation
 
-Bienvenido a **Shuffle Store**, This technical test was done in order to recreate the shuffle store website, it is not for profit and this repository will not suffer future changes since it was only created for this test.
+Bienvenido a **Shuffle Store**, Esta prueba técnica se realizó con el fin de recrear el sitio web de la tienda aleatoria, no tiene fines de lucro y este repositorio no sufrirá cambios futuros ya que solo fue creado para esta prueba.
 
 ---
 
