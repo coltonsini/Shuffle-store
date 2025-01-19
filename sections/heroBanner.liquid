@@ -1,0 +1,28 @@
+<section class="hero__banner">
+    <div class="page__sizeContainer page__generalPadding">
+        <div class="hero__banner__content">
+            <div class="hero__banner_image">
+                <img src="{{settings['hero-banner'].settings.background_image}}" alt="{{settings['hero-banner'].settings.bannerImageAlt}}">
+                <a href="{{settings['hero-banner'].settings.button_link}}" target="_self">
+                    {{settings['hero-banner'].settings.button_text}}
+                </a>
+            </div>
+        </div>
+    </div>
+    <article class="marquee">
+        <div class="marquee__line">
+            {% for i in (1..10) %}
+                <div class="marquee__item">
+                    <img src="/assets/starIcon.svg" alt="Star Icon">
+                    <span>{{ settings['hero-banner'].settings.marquee_text }}</span>
+                </div>
+            {% endfor %}
+            {% for i in (1..10) %}
+                <div class="marquee__item">
+                    <img src="/assets/starIcon.svg" alt="Star Icon">
+                    <span>{{ settings['hero-banner'].settings.marquee_text }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </article>
+</section>

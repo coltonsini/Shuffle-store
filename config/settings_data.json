@@ -1,10 +1,40 @@
 {
   "sections": {
+    "topBar": {
+      "type": "topBar",
+      "settings": {
+        "slider_text": "FREE SHIPPING FOR ORDERS OVER $100"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_text": "MyShopify",
+        "links": [
+          { "label": "All Products", "url": "#allProducts" },
+          { "label": "Collections", "url": "#collections" }
+        ],
+        "payment_icons": [
+          { "url": "/assets/bitcoin.svg", "alt": "BitCoin" },
+          { "url": "/assets/ethereum.svg", "alt": "Ethereum" },
+          { "url": "/assets/liteCoin.svg", "alt": "LiteCoin" },
+          { "url": "/assets/dogeCoin.svg", "alt": "DogeCoin" },
+          { "url": "/assets/USDC.svg", "alt": "USD Coin" }
+        ]
+      }
+    },
     "featured-products": {
       "type": "featured-products",
       "settings": {
         "heading": "Our Featured Products",
-        "background_color": "#ffffff"
+        "background_color": "#ffffff",
+        "featured_Images": [
+          { "url": "/assets/bitcoin.svg", "alt": "BitCoin" },
+          { "url": "/assets/ethereum.svg", "alt": "Ethereum" },
+          { "url": "/assets/liteCoin.svg", "alt": "LiteCoin" },
+          { "url": "/assets/dogeCoin.svg", "alt": "DogeCoin" },
+          { "url": "/assets/USDC.svg", "alt": "USD Coin" }
+        ]
       }
     },
     "hero-banner": {
@@ -13,21 +43,28 @@
         "button_text": "Shop Now",
         "button_link": "/collections/all",
         "marquee_text": "Free Shipping on Orders Over $50",
-        "background_image": "hero_banner_img.avif"
+        "background_image": "/assets/hero_banner_img.avif",
+        "bannerImageAlt": "Collection Image"
       }
     },
     "footer": {
       "type": "footer",
       "settings": {
-        "logo_text": "MyShopify",
-        "links": [
+        "navigation_links": [
           { "label": "Home", "url": "/" },
-          { "label": "Cart", "url": "/cart" },
-          { "label": "All Products", "url": "/collections/all" },
-          { "label": "Collections", "url": "/collections" },
-          { "label": "Refund Policy", "url": "/refund-policy" },
+          { "label": "Shop", "url": "/shop" },
+          { "label": "About", "url": "/about" },
+          { "label": "Contact", "url": "/contact" }
+        ],
+        "legal_links": [
           { "label": "Privacy Policy", "url": "/privacy-policy" },
-          { "label": "Terms of Service", "url": "/terms-of-service" }
+          { "label": "Terms of Service", "url": "/terms-of-service" },
+          { "label": "Refund Policy", "url": "/refund-policy" }
+        ],
+        "social_links": [
+          { "url": "https://www.facebook.com", "icon": "facebook" },
+          { "url": "https://www.twitter.com", "icon": "x(twitter)" },
+          { "url": "https://www.instagram.com", "icon": "instagram" }
         ]
       }
     }
